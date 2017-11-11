@@ -20,17 +20,17 @@ namespace ConsoleApplication18
 
         // push method
         public void push(int item) {
-            if (top == arr.Length - 1)
+            if (this.isFull())
                 Console.WriteLine("Stack Overflow");
             else {
                 top++;
                 arr[top] = item;
-            }            
+            }
         }
 
         // pop method
         public void pop() {
-            if (this.top == -1)
+            if (this.isEmpty())
                 Console.WriteLine("no items to pop. Stack Underflow!");
             else {
                 this.arr[top] = 0;
@@ -78,9 +78,12 @@ namespace ConsoleApplication18
         static void Main(string[] args)
         {
             Stack myStack = new Stack(3);
+            myStack.display();
             myStack.push(1);
             myStack.push(2);
             myStack.push(3);
+            myStack.display();
+            myStack.pop();
             myStack.display();
             myStack.pop();
             myStack.display();
